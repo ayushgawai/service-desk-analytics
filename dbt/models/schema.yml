@@ -1,0 +1,20 @@
+version: 2
+models:
+  - name: stg_tickets
+    columns:
+      - name: ticket_id
+        tests: [unique, not_null]
+      - name: priority
+        tests: [{accepted_values: {values: ['P1','P2','P3','P4']}}]
+  - name: dim_accounts
+    columns:
+      - name: account_id
+        tests: [unique, not_null]
+  - name: fct_tickets
+    columns:
+      - name: is_breached
+        tests: [not_null]
+  - name: agg_client_health
+    columns:
+      - name: health_band
+        tests: [{accepted_values: {values: ['healthy','watch','at_risk']}}]

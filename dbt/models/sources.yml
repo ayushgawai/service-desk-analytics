@@ -1,0 +1,9 @@
+version: 2
+sources:
+  - name: raw
+    schema: main
+    tables:
+      - name: raw_accounts
+      - name: raw_tickets
+      - name: raw_sla_policies
+      - name: raw_uptime_checks
